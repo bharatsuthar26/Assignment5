@@ -34,7 +34,7 @@ transporter.use('compile', hbs(
 const app = express();
 
 //database connection
-mongoose.connect("mongodb+srv://sutharbharat731:Homepc@123@cluster0.j0ed82q.mongodb.net/test")
+mongoose.connect("mongodb+srv://sutharbharat731:bharatsuthar@cluster0.j0ed82q.mongodb.net/test")
     .then(res => console.log("MongoDB Connected"))
     .catch(err => console.log("Error : " + err));
 //end
