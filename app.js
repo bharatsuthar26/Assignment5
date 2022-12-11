@@ -31,7 +31,13 @@ transporter.use('compile', hbs(
     }
 ));
 const app = express();
+<<<<<<< HEAD
 mongoose.connect("mongodb://localhost:27017/fifthAssignment")
+=======
+
+//database connection
+mongoose.connect("mongodb+srv://sutharbharat731:bharatsuthar@cluster0.j0ed82q.mongodb.net/test")
+>>>>>>> a22728b01c58449f459bcef7988f9570827561f1
     .then(res => console.log("MongoDB Connected"))
     .catch(err => console.log("Error : " + err));
 //end
