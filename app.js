@@ -13,7 +13,6 @@ const hbs = require('nodemailer-express-handlebars');
 const PORT = 5000;
 const bcrypt = require('bcrypt');
 const crypto=require('crypto');
-
 const saltRounds = 10;
 let transporter=nodemailer.createTransport({
     service:"gmail",
@@ -32,8 +31,6 @@ transporter.use('compile', hbs(
     }
 ));
 const app = express();
-
-//database connection
 mongoose.connect("mongodb://localhost:27017/fifthAssignment")
     .then(res => console.log("MongoDB Connected"))
     .catch(err => console.log("Error : " + err));
@@ -47,14 +44,12 @@ app.use(sessions({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(csrfMiddleware);
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars');
 app.set('views', './views');
 app.use(express.static("uploads"));
 const userModel = require('./model/User');
 const tokenModel=require('./model/token');
-//start upload code 
 const storage=multer.diskStorage({
     destination:function(req,file,cb){
       cb(null,path.join(__dirname,"/uploads"))
@@ -102,7 +97,6 @@ app.get("/downloadsingle",(req,res)=>{
         res.redirect("/login");
     }
 })
-
 app.post("/uploadfile",(req,res)=>{
     uploadSingle(req,res,(err)=>{
        if(err){

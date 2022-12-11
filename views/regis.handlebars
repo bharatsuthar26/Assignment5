@@ -16,7 +16,7 @@
           {{#if error}}
              <div class="alert alert-danger"> {{error}}</div>
           {{/if}}
-          <form method="post" action="/postregis?_csrf={{csrf}}" enctype="multipart/form-data">
+          <form method="post" action="/postregis?_csrf={{csrf}}" class="w-25" enctype="multipart/form-data">
            <div class="form-group">
                 <label> Email</label>
                 <input type="text" name="email" class="form-control"/>
@@ -33,6 +33,7 @@
                 <label> Image</label>
                 <input type="file" name="att" class="form-control"/>
             </div>
+            <br>
             <input type="submit" value="Submit" class="btn btn-success"/>
           </form>
        </div>
